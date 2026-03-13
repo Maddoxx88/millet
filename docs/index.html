@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millet — Kitchen Sink</title>
+  <link rel="stylesheet" href="../src/css/millet.css">
+  <style>
+    body { padding: 2rem; max-width: 720px; margin: 0 auto; }
+    section { margin-bottom: 3rem; }
+    h2 { margin-bottom: 1.5rem; padding-bottom: .5rem; border-bottom: 1px solid var(--ml-border); }
+    .row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: 1rem; }
+    .ml-field { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<h1>Millet</h1>
+<p>Semantic HTML, styled. Every element below uses zero custom classes — only native tags and <code>data-*</code> attributes.</p>
+
+<!-- ── Buttons ─────────────────────────────── -->
+<section>
+  <h2>Buttons</h2>
+
+  <h4>Types → styles</h4>
+  <div class="row">
+    <button>Secondary</button>
+    <button type="submit">Primary (submit)</button>
+    <button type="reset">Reset / danger</button>
+  </div>
+
+  <h4>Sizes via <code>data-size</code></h4>
+  <div class="row">
+    <button type="submit" data-size="sm">Small</button>
+    <button type="submit">Default</button>
+    <button type="submit" data-size="lg">Large</button>
+  </div>
+
+  <h4>Variants via <code>data-variant</code></h4>
+  <div class="row">
+    <button data-variant="ghost">Ghost</button>
+    <button disabled>Disabled</button>
+    <button type="submit" disabled>Disabled primary</button>
+  </div>
+
+  <h4>Button group</h4>
+  <div class="ml-btn-group">
+    <button>Day</button>
+    <button>Week</button>
+    <button type="submit">Month</button>
+  </div>
+
+  <h4>Full width</h4>
+  <button type="submit" data-width="full" data-size="lg">Sign in</button>
+</section>
+
+
+<!-- ── Text inputs ─────────────────────────── -->
+<section>
+  <h2>Text inputs</h2>
+
+  <div class="ml-field">
+    <label for="name">Full name</label>
+    <input type="text" id="name" placeholder="Ada Lovelace" autocomplete="name">
+  </div>
+
+  <div class="ml-field">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="ada@example.com" required autocomplete="email">
+    <small data-help="We'll never share your email.">We'll never share your email.</small>
+  </div>
+
+  <div class="ml-field">
+    <label for="pw">Password</label>
+    <input type="password" id="pw" minlength="8" required autocomplete="new-password">
+    <small data-help="Minimum 8 characters.">Minimum 8 characters.</small>
+  </div>
+
+  <div class="ml-field">
+    <label for="disabled-field">Disabled</label>
+    <input type="text" id="disabled-field" value="Can't touch this" disabled>
+  </div>
+</section>
+
+
+<!-- ── Other input types ───────────────────── -->
+<section>
+  <h2>Other inputs</h2>
+
+  <div class="ml-field">
+    <label for="bio">Bio</label>
+    <textarea id="bio" rows="4" placeholder="Tell us about yourself…"></textarea>
+  </div>
+
+  <div class="ml-field">
+    <label for="country">Country</label>
+    <select id="country">
+      <option value="">Select a country…</option>
+      <option>Australia</option>
+      <option>Canada</option>
+      <option>United Kingdom</option>
+      <option>United States</option>
+    </select>
+  </div>
+
+  <div class="ml-field">
+    <label for="volume">Volume</label>
+    <input type="range" id="volume" min="0" max="100" value="60">
+  </div>
+</section>
+
+
+<!-- ── Checkboxes & radios ─────────────────── -->
+<section>
+  <h2>Checkboxes &amp; radios</h2>
+
+  <fieldset>
+    <legend>Notifications</legend>
+
+    <div class="ml-check" style="margin-bottom:.5rem">
+      <input type="checkbox" id="email-notif" checked>
+      <label for="email-notif">Email</label>
+    </div>
+    <div class="ml-check" style="margin-bottom:.5rem">
+      <input type="checkbox" id="sms-notif">
+      <label for="sms-notif">SMS</label>
+    </div>
+    <div class="ml-check">
+      <input type="checkbox" id="push-notif" disabled>
+      <label for="push-notif">Push (unavailable)</label>
+    </div>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <legend>Plan</legend>
+
+    <div class="ml-check" style="margin-bottom:.5rem">
+      <input type="radio" name="plan" id="plan-free" checked>
+      <label for="plan-free">Free</label>
+    </div>
+    <div class="ml-check" style="margin-bottom:.5rem">
+      <input type="radio" name="plan" id="plan-pro">
+      <label for="plan-pro">Pro — $9/mo</label>
+    </div>
+    <div class="ml-check">
+      <input type="radio" name="plan" id="plan-team">
+      <label for="plan-team">Team — $29/mo</label>
+    </div>
+  </fieldset>
+</section>
+
+
+<!-- ── Full form example ───────────────────── -->
+<section>
+  <h2>Full form example</h2>
+
+  <form novalidate>
+    <div class="ml-field">
+      <label for="f-name">Name <span aria-hidden="true">*</span></label>
+      <input type="text" id="f-name" required placeholder="Your name">
+      <small data-help=""></small>
+    </div>
+
+    <div class="ml-field">
+      <label for="f-email">Email <span aria-hidden="true">*</span></label>
+      <input type="email" id="f-email" required placeholder="you@example.com">
+      <small data-help=""></small>
+    </div>
+
+    <div class="ml-field">
+      <label for="f-msg">Message</label>
+      <textarea id="f-msg" rows="4" placeholder="What's on your mind?"></textarea>
+    </div>
+
+    <div class="ml-check" style="margin-bottom:1.25rem">
+      <input type="checkbox" id="f-terms" required>
+      <label for="f-terms">I agree to the <a href="#">terms</a></label>
+    </div>
+
+    <div class="row">
+      <button type="submit">Send message</button>
+      <button type="reset">Clear</button>
+    </div>
+  </form>
+</section>
+
+
+<!-- ── Typography ──────────────────────────── -->
+<section>
+  <h2>Typography</h2>
+  <h1>h1 — Page title</h1>
+  <h2>h2 — Section</h2>
+  <h3>h3 — Subsection</h3>
+  <h4>h4 — Group</h4>
+  <h5>h5 — Label</h5>
+  <h6>h6 — Eyebrow</h6>
+  <br>
+  <p>Body text. Use <strong>strong</strong> for emphasis, <a href="#">links</a> for navigation, <code>code</code> for inline snippets, and <kbd>Ctrl</kbd>+<kbd>K</kbd> for keyboard shortcuts.</p>
+  <br>
+  <blockquote>Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.</blockquote>
+  <br>
+  <p>Press <mark>highlight</mark> to mark important text. <small>And small for fine print.</small></p>
+  <br>
+  <pre><code>const millet = await import('./millet/core.js');</code></pre>
+</section>
+
+<script type="module" src="../src/js/enhance.js"></script>
+</body>
+</html>

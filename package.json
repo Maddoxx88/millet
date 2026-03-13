@@ -1,0 +1,17 @@
+{
+  "name": "millet",
+  "version": "0.1.0",
+  "description": "Semantic HTML, styled. Zero classes required.",
+  "type": "module",
+  "exports": {
+    ".":         "./src/js/core.js",
+    "./enhance": "./src/js/enhance.js",
+    "./css":     "./src/css/millet.css"
+  },
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "keywords": ["css", "ui", "classless", "semantic", "lightweight"],
+  "license": "MIT"
+}
