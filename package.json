@@ -11,11 +11,15 @@
     "url": "git+https://github.com/Maddoxx88/millet.git"
   },
   "exports": {
-    ".":          { "import": "./src/js/core.js" },
-    "./enhance":  { "import": "./src/js/enhance.js" },
-    "./css":      "./src/css/millet.css",
+    ".": {
+      "import": "./src/js/core.js"
+    },
+    "./enhance": {
+      "import": "./src/js/enhance.js"
+    },
+    "./css": "./src/css/millet.css",
     "./dist/css": "./dist/millet.min.css",
-    "./dist/js":  "./dist/millet.min.js"
+    "./dist/js": "./dist/millet.min.js"
   },
   "files": [
     "src/",
@@ -23,11 +27,24 @@
     "README.md"
   ],
   "scripts": {
-    "build":          "node build.mjs",
-    "measure":        "node measure.mjs",
+    "build": "node build.mjs",
+    "measure": "node measure.mjs",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["css", "ui", "classless", "semantic", "lightweight", "zero-dependency", "dark-mode", "accessible"],
+  "main": "./dist/millet.min.js",
+  "style": "./dist/millet.min.css",
+  "unpkg": "./dist/millet.min.js",
+  "jsdelivr": "./dist/millet.min.js",
+  "keywords": [
+    "css",
+    "ui",
+    "classless",
+    "semantic",
+    "lightweight",
+    "zero-dependency",
+    "dark-mode",
+    "accessible"
+  ],
   "devDependencies": {
     "esbuild": "^0.25.0"
   }
