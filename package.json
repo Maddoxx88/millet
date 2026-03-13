@@ -1,17 +1,34 @@
 {
-  "name": "millet",
+  "name": "@sshirke/millet",
   "version": "0.1.0",
   "description": "Semantic HTML, styled. Zero classes required.",
   "type": "module",
+  "author": "Sunit Shirke",
+  "license": "MIT",
+  "homepage": "https://WIP",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maddoxx88/millet.git"
+  },
   "exports": {
-    ".":         "./src/js/core.js",
-    "./enhance": "./src/js/enhance.js",
-    "./css":     "./src/css/millet.css"
+    ".":          { "import": "./src/js/core.js" },
+    "./enhance":  { "import": "./src/js/enhance.js" },
+    "./css":      "./src/css/millet.css",
+    "./dist/css": "./dist/millet.min.css",
+    "./dist/js":  "./dist/millet.min.js"
   },
   "files": [
     "src/",
-    "dist/"
+    "dist/",
+    "README.md"
   ],
-  "keywords": ["css", "ui", "classless", "semantic", "lightweight"],
-  "license": "MIT"
+  "scripts": {
+    "build":          "node build.mjs",
+    "measure":        "node measure.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["css", "ui", "classless", "semantic", "lightweight", "zero-dependency", "dark-mode", "accessible"],
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
 }
