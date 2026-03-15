@@ -4,6 +4,8 @@
 
 One CSS file. One optional JS module. Write proper HTML and Millet styles it contextually — `<button type="submit">` looks like a primary action, validation messages appear inline automatically, dark mode works without a toggle.
 
+See live demo and docs [here.](https://maddoxx88.github.io/millet)
+
 ## Quick start
 
 ```html
