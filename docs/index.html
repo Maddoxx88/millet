@@ -5,22 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Millet — Kitchen Sink</title>
   <link rel="stylesheet" href="../src/css/millet.css">
-  <style>
-    body { padding: 2rem; max-width: 720px; margin: 0 auto; }
-    section { margin-bottom: 3rem; }
-    h2 { margin-bottom: 1.5rem; padding-bottom: .5rem; border-bottom: 1px solid var(--ml-border); }
-    .row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: 1rem; }
-    .ml-field { margin-bottom: 1rem; }
-  </style>
+  <link rel="stylesheet" href="./docs.css">
 </head>
 <body>
 
-<h1>Millet</h1>
-<p>Semantic HTML, styled. Every element below uses zero custom classes — only native tags and <code>data-*</code> attributes.</p>
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <div class="docs-brand">
+      <a class="docs-logo" href="#top" aria-label="Millet docs home">Millet</a>
+      <button class="docs-theme-toggle" type="button" data-variant="ghost" data-size="sm" data-docs-theme-toggle>
+        Auto
+      </button>
+    </div>
+
+    <nav class="docs-nav" aria-label="Docs navigation">
+      <div class="docs-nav-group">
+        <h6>Getting started</h6>
+        <a href="#top">Overview</a>
+        <a href="#usage">Usage</a>
+      </div>
+
+      <div class="docs-nav-group">
+        <h6>Components</h6>
+        <a href="#buttons">Buttons</a>
+        <a href="#text-inputs">Text inputs</a>
+        <a href="#other-inputs">Other inputs</a>
+        <a href="#checks">Checkboxes &amp; radios</a>
+        <a href="#full-form">Full form</a>
+        <a href="#typography">Typography</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="docs-main">
+    <header class="docs-topbar" role="banner">
+      <div class="docs-topbar-inner">
+        <div class="docs-topbar-links" aria-label="Top navigation">
+          <a href="#top">Home</a>
+          <a href="#buttons">Demo</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <details>
+          <summary style="list-style:none; cursor:pointer; user-select:none;">
+            <button type="button" data-variant="ghost" data-size="sm" aria-hidden="true" tabindex="-1">More</button>
+          </summary>
+          <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="#usage">Usage</a>
+            <a href="#typography">Typography</a>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main class="docs-content" id="top">
+      <section class="docs-hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Semantic HTML, styled.</h1>
+        <p class="docs-lede">
+          Millet is a tiny, semantic-first CSS layer for common UI elements — no framework, no build step.
+          Components are styled with native tags and a few <code>data-*</code> attributes.
+        </p>
+        <div class="docs-cta" role="group" aria-label="Primary actions">
+          <a href="#buttons"><button type="submit">Browse components</button></a>
+          <a href="#usage"><button data-variant="ghost">Get started</button></a>
+        </div>
+
+        <div class="docs-card-grid" aria-label="Highlights">
+          <article class="docs-card">
+            <h4>Lightweight</h4>
+            <p>Minimal surface area with sensible defaults. Keep your markup clean and your UI consistent.</p>
+          </article>
+          <article class="docs-card">
+            <h4>Zero dependencies</h4>
+            <p>Just CSS (and optional progressive enhancement). Works in any stack — or no stack.</p>
+          </article>
+          <article class="docs-card">
+            <h4>Semantic by design</h4>
+            <p>Buttons, forms, fieldsets, and typography are styled via native elements and attributes.</p>
+          </article>
+          <article class="docs-card">
+            <h4>Accessible defaults</h4>
+            <p>Global focus rings, good contrast, and validation wiring that respects standard browser semantics.</p>
+          </article>
+        </div>
+      </section>
+
+      <hr class="docs-divider">
+
+      <section class="docs-section" id="usage" aria-labelledby="usage-title">
+        <h2 id="usage-title">Usage</h2>
+        <p>
+          Include the stylesheet and (optionally) the enhancement script. Then use semantic HTML.
+          For variants, use attributes like <code>data-size</code>, <code>data-variant</code>, and <code>data-width</code>.
+        </p>
+        <pre><code>&lt;link rel="stylesheet" href="src/css/millet.css"&gt;
+&lt;script type="module" src="src/js/enhance.js"&gt;&lt;/script&gt;</code></pre>
+      </section>
 
 <!-- ── Buttons ─────────────────────────────── -->
-<section>
-  <h2>Buttons</h2>
+<section class="docs-section" id="buttons" aria-labelledby="buttons-title">
+  <h2 id="buttons-title">Buttons</h2>
 
   <h4>Types → styles</h4>
   <div class="row">
@@ -56,8 +139,8 @@
 
 
 <!-- ── Text inputs ─────────────────────────── -->
-<section>
-  <h2>Text inputs</h2>
+<section class="docs-section" id="text-inputs" aria-labelledby="text-inputs-title">
+  <h2 id="text-inputs-title">Text inputs</h2>
 
   <div class="ml-field">
     <label for="name">Full name</label>
@@ -84,8 +167,8 @@
 
 
 <!-- ── Other input types ───────────────────── -->
-<section>
-  <h2>Other inputs</h2>
+<section class="docs-section" id="other-inputs" aria-labelledby="other-inputs-title">
+  <h2 id="other-inputs-title">Other inputs</h2>
 
   <div class="ml-field">
     <label for="bio">Bio</label>
@@ -111,8 +194,8 @@
 
 
 <!-- ── Checkboxes & radios ─────────────────── -->
-<section>
-  <h2>Checkboxes &amp; radios</h2>
+<section class="docs-section" id="checks" aria-labelledby="checks-title">
+  <h2 id="checks-title">Checkboxes &amp; radios</h2>
 
   <fieldset>
     <legend>Notifications</legend>
@@ -153,8 +236,8 @@
 
 
 <!-- ── Full form example ───────────────────── -->
-<section>
-  <h2>Full form example</h2>
+<section class="docs-section" id="full-form" aria-labelledby="full-form-title">
+  <h2 id="full-form-title">Full form example</h2>
 
   <form novalidate>
     <div class="ml-field">
@@ -188,8 +271,8 @@
 
 
 <!-- ── Typography ──────────────────────────── -->
-<section>
-  <h2>Typography</h2>
+<section class="docs-section" id="typography" aria-labelledby="typography-title">
+  <h2 id="typography-title">Typography</h2>
   <h1>h1 — Page title</h1>
   <h2>h2 — Section</h2>
   <h3>h3 — Subsection</h3>
@@ -206,6 +289,11 @@
   <pre><code>const millet = await import('./millet/core.js');</code></pre>
 </section>
 
+    </main>
+  </div>
+</div>
+
+<script src="./docs.js"></script>
 <script type="module" src="../src/js/enhance.js"></script>
 </body>
 </html>
