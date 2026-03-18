@@ -1,4 +1,4 @@
-/* Docs site chrome (keeps Millet component styling intact) */
+/* Docs site chrome — uses default Millet tokens (no custom brand palette) */
 
 :root {
   --docs-sidebar-w: 272px;
@@ -7,7 +7,7 @@
   --docs-shadow: 0 1px 0 hsl(0 0% 0% / 0.04), 0 10px 30px hsl(0 0% 0% / 0.06);
 }
 
-/* Optional manual theme override (default is auto via prefers-color-scheme) */
+/* Optional manual theme override (default follows prefers-color-scheme via millet.css) */
 :root[data-theme="light"] {
   color-scheme: light;
   --ml-bg: hsl(0 0% 100%);
@@ -67,7 +67,9 @@ body {
   color: var(--ml-text);
   font-weight: 700;
 }
-.docs-logo:hover { color: var(--ml-text); }
+.docs-logo:hover {
+  color: var(--ml-text);
+}
 
 .docs-theme-toggle {
   font-size: var(--ml-text-sm);
@@ -102,7 +104,13 @@ body {
 }
 
 .docs-main {
-  background: linear-gradient(180deg, var(--ml-bg) 0, var(--ml-bg) 240px, var(--ml-bg-raised) 240px, var(--ml-bg-raised) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--ml-bg) 0,
+    var(--ml-bg) 240px,
+    var(--ml-bg-raised) 240px,
+    var(--ml-bg-raised) 100%
+  );
 }
 
 .docs-topbar {
@@ -116,6 +124,12 @@ body {
 }
 :root[data-theme="dark"] .docs-topbar {
   background: hsl(0 0% 9% / 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .docs-topbar {
+    background: hsl(0 0% 9% / 0.7);
+  }
 }
 
 .docs-topbar-inner {
@@ -158,6 +172,7 @@ body {
 
 .docs-hero h1 {
   letter-spacing: -0.03em;
+  color: var(--ml-text);
 }
 
 .docs-lede {
@@ -187,7 +202,9 @@ body {
   padding: 16px 16px 14px;
   box-shadow: var(--docs-shadow);
 }
-.docs-card h4 { margin-bottom: 6px; }
+.docs-card h4 {
+  margin-bottom: 6px;
+}
 .docs-card p {
   color: var(--ml-text-muted);
   font-size: var(--ml-text-sm);
@@ -207,25 +224,48 @@ body {
   margin-bottom: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--ml-border);
+  color: var(--ml-text);
 }
 
+.docs-section > h4 {
+  margin-top: var(--ml-space-6);
+  margin-bottom: var(--ml-space-2);
+  font-weight: 600;
+}
+
+.docs-section > h2 + h4 {
+  margin-top: var(--ml-space-4);
+}
+
+.docs-section > .ml-btn-row + h4,
+.docs-section > .ml-btn-group + h4 {
+  margin-top: var(--ml-space-2);
+}
+
+/* Fallback row for inline control groups */
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
   align-items: center;
+  gap: var(--ml-space-3);
+  margin-bottom: var(--ml-space-4);
+}
+
+.ml-field {
   margin-bottom: 1rem;
 }
 
-/* Mobile */
 @media (max-width: 980px) {
-  .docs-shell { grid-template-columns: 1fr; }
+  .docs-shell {
+    grid-template-columns: 1fr;
+  }
   .docs-sidebar {
     position: relative;
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--ml-border);
   }
-  .docs-card-grid { grid-template-columns: 1fr; }
+  .docs-card-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
