@@ -28,6 +28,7 @@
   ],
   "scripts": {
     "build": "node build.mjs",
+    "docs:bundle": "printf '%s\\n\\n' '/* Millet core + docs chrome — single file for GitHub Pages. Regenerate: npm run docs:bundle */' | cat - src/css/millet.css docs/chrome.css > docs/styles.css",
     "measure": "node measure.mjs",
     "prepublishOnly": "npm run build"
   },

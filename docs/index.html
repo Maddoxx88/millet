@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Millet — Kitchen Sink</title>
-  <link rel="stylesheet" href="../src/css/millet.css">
-  <link rel="stylesheet" href="./docs.css">
+  <title>Millet — Pure HTML. Zero dependencies. Tiny CSS. Semantic UI, out of the box.</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -97,8 +96,11 @@
           Include the stylesheet and (optionally) the enhancement script. Then use semantic HTML.
           For variants, use attributes like <code>data-size</code>, <code>data-variant</code>, and <code>data-width</code>.
         </p>
-        <pre><code>&lt;link rel="stylesheet" href="src/css/millet.css"&gt;
-&lt;script type="module" src="src/js/enhance.js"&gt;&lt;/script&gt;</code></pre>
+        <pre><code>&lt;!-- This site (everything under /docs) --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script type="module" src="enhance.js"&gt;&lt;/script&gt;
+
+&lt;!-- Or from the package: src/css/millet.css + src/js/enhance.js --&gt;</code></pre>
       </section>
 
 <!-- ── Buttons ─────────────────────────────── -->
@@ -294,6 +296,6 @@
 </div>
 
 <script src="./docs.js"></script>
-<script type="module" src="../src/js/enhance.js"></script>
+<script type="module" src="./enhance.js"></script>
 </body>
 </html>

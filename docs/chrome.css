@@ -7,7 +7,6 @@
   --docs-shadow: 0 1px 0 hsl(0 0% 0% / 0.04), 0 10px 30px hsl(0 0% 0% / 0.06);
 }
 
-/* Optional manual theme override (default follows prefers-color-scheme via millet.css) */
 :root[data-theme="light"] {
   color-scheme: light;
   --ml-bg: hsl(0 0% 100%);
@@ -242,13 +241,52 @@ body {
   margin-top: var(--ml-space-2);
 }
 
-/* Fallback row for inline control groups */
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--ml-space-3);
   margin-bottom: var(--ml-space-4);
+}
+
+.ml-btn-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--ml-space-3);
+  margin: 0 0 var(--ml-space-5);
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--ml-space-1);
+  -webkit-overflow-scrolling: touch;
+}
+.ml-btn-row > * {
+  flex: 0 0 auto;
+}
+
+.ml-btn-group {
+  margin-bottom: var(--ml-space-5);
+  vertical-align: top;
+}
+
+/* Even button row height in demos */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  min-height: 2.25rem;
+}
+button[data-size="sm"],
+input[type="button"][data-size="sm"],
+input[type="submit"][data-size="sm"] {
+  min-height: 1.75rem;
+}
+button[data-size="lg"],
+input[type="button"][data-size="lg"],
+input[type="submit"][data-size="lg"] {
+  min-height: 2.75rem;
 }
 
 .ml-field {
