@@ -60,14 +60,21 @@ body {
 }
 
 .docs-logo {
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--ml-text);
-  font-weight: 700;
 }
-.docs-logo:hover {
-  color: var(--ml-text);
+
+.docs-logo-img {
+  display: block;
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+.docs-logo:hover .docs-logo-img {
+  opacity: 0.9;
 }
 
 .docs-theme-toggle {
@@ -169,13 +176,32 @@ body {
   padding: 26px 0 22px;
 }
 
+.docs-hero-logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.docs-hero-logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.docs-hero-logo:hover img {
+  opacity: 0.88;
+}
+
 .docs-hero h1 {
   letter-spacing: -0.03em;
   color: var(--ml-text);
+  margin-top: 0;
 }
 
 .docs-lede {
-  margin-top: 10px;
+  margin-top: 12px;
   color: var(--ml-text-muted);
   font-size: clamp(1.05rem, 1.2vw + 0.9rem, 1.2rem);
 }
