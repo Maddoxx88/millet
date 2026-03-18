@@ -216,6 +216,8 @@ input[type="reset"] {
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
+  /* Align rows when mixing ghost / bordered / disabled */
+  min-height: 2.25rem;
   transition:
     background var(--ml-duration) var(--ml-ease),
     border-color var(--ml-duration) var(--ml-ease),
@@ -275,6 +277,7 @@ input[type="reset"]:disabled {
 button[data-size="sm"],
 input[type="button"][data-size="sm"],
 input[type="submit"][data-size="sm"] {
+  min-height: 1.75rem;
   padding: var(--ml-space-1) var(--ml-space-3);
   font-size: 0.75rem;
   border-radius: var(--ml-radius-sm);
@@ -283,6 +286,7 @@ input[type="submit"][data-size="sm"] {
 button[data-size="lg"],
 input[type="button"][data-size="lg"],
 input[type="submit"][data-size="lg"] {
+  min-height: 2.75rem;
   padding: var(--ml-space-3) var(--ml-space-5);
   font-size: var(--ml-text-lg);
   border-radius: var(--ml-radius-lg);
@@ -502,6 +506,8 @@ legend {
 .ml-btn-group {
   display: inline-flex;
   gap: 0;
+  margin-bottom: var(--ml-space-5);
+  vertical-align: top;
 }
 .ml-btn-group button,
 .ml-btn-group input[type="button"] {
@@ -516,4 +522,21 @@ legend {
 .ml-btn-group button + button,
 .ml-btn-group input + input {
   margin-left: -1px;
+}
+
+/* Horizontal button demos — even gaps, no stray wrap / misalignment */
+.ml-btn-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--ml-space-3);
+  margin: 0 0 var(--ml-space-5);
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--ml-space-1);
+  -webkit-overflow-scrolling: touch;
+}
+.ml-btn-row > * {
+  flex: 0 0 auto;
 }
