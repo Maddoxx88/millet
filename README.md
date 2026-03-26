@@ -59,8 +59,8 @@ Override any token on `:root`:
 
 ## Roadmap
 
-- [ ] Dialog / modal (native `<dialog>` + focus trap)
-- [ ] Dropdown (native `popover` API)
-- [ ] Accordion (native `<details>` enhancement)
-- [ ] Toast / alert
-- [ ] Data table
+- [x] Dialog / modal (native `<dialog>` + focus trap)
+- [x] Dropdown (native `popover` API)
+- [x] Accordion (native `<details>` enhancement)
+- [x] Toast / alert
+- [x] Data table

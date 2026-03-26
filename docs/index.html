@@ -32,6 +32,11 @@
       <div class="docs-nav-group">
         <h6>Components</h6>
         <a href="#buttons">Buttons</a>
+        <a href="#accordion">Accordion</a>
+        <a href="#dialog">Dialog</a>
+        <a href="#dropdown">Dropdown</a>
+        <a href="#toast-alert">Toast &amp; alert</a>
+        <a href="#data-table">Data table</a>
         <a href="#text-inputs">Text inputs</a>
         <a href="#other-inputs">Other inputs</a>
         <a href="#checks">Checkboxes &amp; radios</a>
@@ -49,15 +54,6 @@
           <a href="#buttons">Demo</a>
           <a href="https://github.com/Maddoxx88/millet" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-        <details>
-          <summary style="list-style:none; cursor:pointer; user-select:none;">
-            <button type="button" data-variant="ghost" data-size="sm" aria-hidden="true" tabindex="-1">More</button>
-          </summary>
-          <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
-            <a href="#usage">Usage</a>
-            <a href="#typography">Typography</a>
-          </div>
-        </details>
       </div>
     </header>
 
@@ -242,6 +238,124 @@
       <label for="plan-team">Team — $29/mo</label>
     </div>
   </fieldset>
+</section>
+
+
+<!-- ── Accordion ──────────────────────────── -->
+<section class="docs-section" id="accordion" aria-labelledby="accordion-title">
+  <h2 id="accordion-title">Accordion</h2>
+  <p>Native <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>, enhanced for single-open mode with <code>data-accordion="single"</code>.</p>
+
+  <div data-accordion="single">
+    <details open>
+      <summary>What is Millet?</summary>
+      <p>Millet is a semantic-first CSS layer that styles native elements with sensible defaults.</p>
+    </details>
+    <details>
+      <summary>Does it need JavaScript?</summary>
+      <p>No for styling. JS is optional and only used for progressive enhancement where needed.</p>
+    </details>
+    <details>
+      <summary>Can I theme it?</summary>
+      <p>Yes. Override the design tokens on <code>:root</code> to control color, radius, and typography.</p>
+    </details>
+  </div>
+</section>
+
+
+<!-- ── Dialog ─────────────────────────────── -->
+<section class="docs-section" id="dialog" aria-labelledby="dialog-title">
+  <h2 id="dialog-title">Dialog</h2>
+  <p>Uses native <code>&lt;dialog&gt;</code>. Trigger with <code>data-dialog-open</code> and dismiss with <code>data-dialog-close</code>.</p>
+
+  <button type="button" data-dialog-open="demo-dialog">Open dialog</button>
+
+  <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
+    <header>
+      <h3 id="demo-dialog-title">Delete draft?</h3>
+    </header>
+    <section>
+      <p>This action cannot be undone. Do you want to continue?</p>
+    </section>
+    <footer>
+      <button type="button" data-variant="ghost" data-dialog-close>Cancel</button>
+      <button type="reset" data-dialog-close>Delete</button>
+    </footer>
+  </dialog>
+</section>
+
+
+<!-- ── Dropdown ───────────────────────────── -->
+<section class="docs-section" id="dropdown" aria-labelledby="dropdown-title">
+  <h2 id="dropdown-title">Dropdown</h2>
+  <p>Powered by native popover with <code>popovertarget</code> and <code>popover</code>.</p>
+
+  <div class="row">
+    <button type="button" popovertarget="menu-1" aria-haspopup="menu">Actions</button>
+    <div id="menu-1" popover>
+      <button type="button" data-variant="ghost">Edit</button>
+      <button type="button" data-variant="ghost">Duplicate</button>
+      <button type="reset">Archive</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Toast / alert ──────────────────────── -->
+<section class="docs-section" id="toast-alert" aria-labelledby="toast-alert-title">
+  <h2 id="toast-alert-title">Toast &amp; alert</h2>
+  <p>Use <code>data-toast</code> on live regions. Optional <code>data-auto-dismiss</code> dismisses toasts automatically.</p>
+
+  <div style="display:grid; gap:12px;">
+    <div data-toast role="status" data-tone="success" data-auto-dismiss="7000">
+      <p>Profile updated successfully.</p>
+      <button type="button" data-variant="ghost" data-size="sm" data-toast-close>Dismiss</button>
+    </div>
+
+    <div data-toast role="alert">
+      <p>Payment failed. Please update your billing details.</p>
+      <button type="button" data-variant="ghost" data-size="sm" data-toast-close>Close</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Data table ─────────────────────────── -->
+<section class="docs-section" id="data-table" aria-labelledby="data-table-title">
+  <h2 id="data-table-title">Data table</h2>
+  <p>Semantic table styling for dense data and readable scan lines.</p>
+
+  <table>
+    <caption>Team usage this week</caption>
+    <thead>
+      <tr>
+        <th scope="col">Member</th>
+        <th scope="col">Requests</th>
+        <th scope="col">Success rate</th>
+        <th scope="col">Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ada Lovelace</td>
+        <td>1,820</td>
+        <td>99.6%</td>
+        <td>Pro</td>
+      </tr>
+      <tr>
+        <td>Alan Turing</td>
+        <td>2,104</td>
+        <td>98.9%</td>
+        <td>Team</td>
+      </tr>
+      <tr>
+        <td>Grace Hopper</td>
+        <td>1,432</td>
+        <td>99.8%</td>
+        <td>Pro</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 

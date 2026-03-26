@@ -540,3 +540,191 @@ legend {
 .ml-btn-row > * {
   flex: 0 0 auto;
 }
+
+
+/* ── 8. Accordion (<details>) ─────────────── */
+details {
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  background: var(--ml-bg);
+}
+
+details + details {
+  margin-top: var(--ml-space-2);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: var(--ml-space-3) var(--ml-space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ml-space-3);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '+';
+  color: var(--ml-text-muted);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+details[open] > summary {
+  border-bottom: 1px solid var(--ml-border);
+}
+
+details[open] > summary::after {
+  content: '-';
+}
+
+details > *:not(summary) {
+  padding: var(--ml-space-4);
+}
+
+
+/* ── 9. Dialog / modal ────────────────────── */
+dialog {
+  width: min(36rem, calc(100vw - 2rem));
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  padding: 0;
+  box-shadow: 0 20px 48px hsl(0 0% 0% / 0.22);
+}
+
+dialog::backdrop {
+  background: hsl(0 0% 0% / 0.45);
+}
+
+dialog > header,
+dialog > footer {
+  padding: var(--ml-space-4) var(--ml-space-5);
+}
+
+dialog > header {
+  border-bottom: 1px solid var(--ml-border);
+}
+
+dialog > footer {
+  border-top: 1px solid var(--ml-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ml-space-2);
+}
+
+dialog > section,
+dialog > form {
+  padding: var(--ml-space-4) var(--ml-space-5);
+}
+
+
+/* ── 10. Dropdown (popover) ───────────────── */
+[popover] {
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  padding: var(--ml-space-2);
+  min-width: 12rem;
+  box-shadow: 0 10px 28px hsl(0 0% 0% / 0.18);
+}
+
+[popover]:popover-open {
+  display: grid;
+  gap: var(--ml-space-1);
+}
+
+[popover][hidden] {
+  display: none;
+}
+
+[popover] > a,
+[popover] > button {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+
+/* ── 11. Toast / alert ────────────────────── */
+[data-toast] {
+  border: 1px solid var(--ml-border);
+  border-left: 4px solid var(--ml-accent);
+  border-radius: var(--ml-radius);
+  background: var(--ml-bg-raised);
+  color: var(--ml-text);
+  padding: var(--ml-space-3) var(--ml-space-4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ml-space-3);
+}
+
+[data-toast][role="alert"] {
+  border-left-color: var(--ml-danger);
+}
+
+[data-toast][data-tone="success"] {
+  border-left-color: var(--ml-success);
+}
+
+[data-toast][data-tone="warning"] {
+  border-left-color: var(--ml-warning);
+}
+
+[data-toast] p {
+  margin: 0;
+  max-width: none;
+}
+
+[data-toast][hidden] {
+  display: none;
+}
+
+
+/* ── 12. Data tables ──────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  overflow: hidden;
+}
+
+caption {
+  text-align: left;
+  font-size: var(--ml-text-sm);
+  color: var(--ml-text-muted);
+  margin-bottom: var(--ml-space-2);
+}
+
+thead {
+  background: var(--ml-bg-raised);
+}
+
+th,
+td {
+  text-align: left;
+  padding: var(--ml-space-3) var(--ml-space-4);
+  border-bottom: 1px solid var(--ml-border);
+}
+
+th {
+  font-weight: 600;
+  font-size: var(--ml-text-sm);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--ml-accent-muted);
+}
