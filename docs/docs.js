@@ -1,37 +1,32 @@
 const STORAGE_KEY = 'millet-docs.theme';
 
-function getPreferredTheme() {
+function getInitialTheme() {
   const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved === 'light' || saved === 'dark' || saved === 'auto') return saved;
-  return 'auto';
+  if (saved === 'light' || saved === 'dark') return saved;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 function applyTheme(mode) {
   const root = document.documentElement;
-  if (mode === 'auto') {
-    root.removeAttribute('data-theme');
-  } else {
-    root.setAttribute('data-theme', mode);
-  }
+  root.setAttribute('data-theme', mode);
 }
 
 function setButtonLabel(btn, mode) {
-  const label = mode === 'auto' ? 'Auto' : mode[0].toUpperCase() + mode.slice(1);
-  btn.setAttribute('aria-label', `Theme: ${label}`);
-  btn.textContent = label;
+  const current = mode[0].toUpperCase() + mode.slice(1);
+  const next = mode === 'light' ? 'Dark' : 'Light';
+  btn.setAttribute('aria-label', `Current theme: ${current}. Switch to ${next}.`);
+  btn.textContent = current;
 }
 
 function cycleTheme(mode) {
-  if (mode === 'auto') return 'light';
-  if (mode === 'light') return 'dark';
-  return 'auto';
+  return mode === 'light' ? 'dark' : 'light';
 }
 
 function initThemeToggle() {
   const btn = document.querySelector('[data-docs-theme-toggle]');
   if (!btn) return;
 
-  let mode = getPreferredTheme();
+  let mode = getInitialTheme();
   applyTheme(mode);
   setButtonLabel(btn, mode);
 
