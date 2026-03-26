@@ -18,6 +18,7 @@ export function enhance(root = document) {
   enhanceDialogs(root);
   enhanceDropdowns(root);
   enhanceAccordions(root);
+  enhanceTabs(root);
   enhanceToasts(root);
 }
 
@@ -292,6 +293,63 @@ function enhanceToasts(root) {
 
 function dismissToast(toast) {
   toast.setAttribute('hidden', '');
+}
+
+
+/* ── Tabs ─────────────────────────────────── */
+
+function enhanceTabs(root) {
+  root.querySelectorAll('[data-tabs]').forEach(group => {
+    if (group[ENHANCED]) return;
+    group[ENHANCED] = true;
+
+    const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(group.querySelectorAll('[role="tabpanel"]'));
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach((tab, index) => {
+      if (!tab.id) tab.id = `ml-tab-${uid()}`;
+      if (!tab.hasAttribute('aria-controls') && panels[index]) {
+        if (!panels[index].id) panels[index].id = `ml-panel-${uid()}`;
+        tab.setAttribute('aria-controls', panels[index].id);
+      }
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    const preselected = tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true');
+    activateTab(tabs, panels, preselected >= 0 ? preselected : 0, false);
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tabs, panels, index, true));
+      tab.addEventListener('keydown', event => {
+        const nextIndex = getNextTabIndex(event.key, index, tabs.length);
+        if (nextIndex < 0) return;
+        event.preventDefault();
+        activateTab(tabs, panels, nextIndex, true);
+      });
+    });
+  });
+}
+
+function activateTab(tabs, panels, index, focus) {
+  tabs.forEach((tab, i) => {
+    const selected = i === index;
+    tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+    tab.setAttribute('tabindex', selected ? '0' : '-1');
+    if (selected && focus) tab.focus();
+  });
+
+  panels.forEach((panel, i) => {
+    panel.hidden = i !== index;
+  });
+}
+
+function getNextTabIndex(key, currentIndex, total) {
+  if (key === 'ArrowRight') return (currentIndex + 1) % total;
+  if (key === 'ArrowLeft') return (currentIndex - 1 + total) % total;
+  if (key === 'Home') return 0;
+  if (key === 'End') return total - 1;
+  return -1;
 }
 
 function getFocusableElements(root) {

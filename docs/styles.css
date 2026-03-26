@@ -730,6 +730,320 @@ tbody tr:last-child td {
 tbody tr:hover {
   background: var(--ml-accent-muted);
 }
+
+
+/* ── 13. Alert (standalone) ───────────────── */
+[role="alert"]:not([data-toast]) {
+  border: 1px solid var(--ml-danger);
+  border-left: 4px solid var(--ml-danger);
+  border-radius: var(--ml-radius);
+  background: var(--ml-danger-muted);
+  color: var(--ml-text);
+  padding: var(--ml-space-3) var(--ml-space-4);
+}
+
+
+/* ── 14. Animations ───────────────────────── */
+@keyframes ml-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ml-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes ml-spin {
+  to { transform: rotate(360deg); }
+}
+
+[data-animate="fade-in"] {
+  animation: ml-fade-in 220ms var(--ml-ease);
+}
+
+[data-animate="pulse"] {
+  animation: ml-pulse 1.2s var(--ml-ease) infinite;
+}
+
+[data-animate="spin"] {
+  animation: ml-spin 900ms linear infinite;
+}
+
+
+/* ── 15. Avatar ───────────────────────────── */
+[data-avatar] {
+  --ml-avatar-size: 2.25rem;
+  width: var(--ml-avatar-size);
+  height: var(--ml-avatar-size);
+  border-radius: 50%;
+  background: var(--ml-accent-muted);
+  color: var(--ml-accent);
+  border: 1px solid var(--ml-border);
+  display: inline-grid;
+  place-items: center;
+  font-size: var(--ml-text-sm);
+  font-weight: 600;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+[data-avatar][data-size="lg"] {
+  --ml-avatar-size: 3rem;
+  font-size: var(--ml-text-base);
+}
+
+[data-avatar] > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ── 16. Badge ────────────────────────────── */
+[data-badge] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ml-space-1);
+  border-radius: 999px;
+  border: 1px solid var(--ml-border);
+  background: var(--ml-bg-raised);
+  color: var(--ml-text);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+[data-badge][data-tone="accent"] {
+  border-color: var(--ml-accent);
+  background: var(--ml-accent-muted);
+  color: var(--ml-accent);
+}
+
+[data-badge][data-tone="danger"] {
+  border-color: var(--ml-danger);
+  background: var(--ml-danger-muted);
+  color: var(--ml-danger);
+}
+
+[data-badge][data-tone="success"] {
+  border-color: var(--ml-success);
+  background: var(--ml-success-muted);
+  color: var(--ml-success);
+}
+
+
+/* ── 17. Card ─────────────────────────────── */
+[data-card] {
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  background: var(--ml-bg);
+  padding: var(--ml-space-4);
+  box-shadow: 0 1px 0 hsl(0 0% 0% / 0.04), 0 10px 30px hsl(0 0% 0% / 0.06);
+}
+
+[data-card] > h3,
+[data-card] > h4 {
+  margin-bottom: var(--ml-space-2);
+}
+
+[data-card] > p {
+  color: var(--ml-text-muted);
+  max-width: none;
+}
+
+
+/* ── 18. Grid ─────────────────────────────── */
+[data-grid] {
+  --ml-grid-min: 14rem;
+  display: grid;
+  gap: var(--ml-space-3);
+  grid-template-columns: repeat(auto-fit, minmax(var(--ml-grid-min), 1fr));
+}
+
+[data-grid][data-columns="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+[data-grid][data-columns="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-grid][data-columns="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+@media (max-width: 900px) {
+  [data-grid][data-columns] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  [data-grid][data-columns] {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── 19. Progress ─────────────────────────── */
+progress {
+  width: 100%;
+  height: 0.65rem;
+  border: 1px solid var(--ml-border);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--ml-bg-sunken);
+  accent-color: var(--ml-accent);
+}
+
+meter {
+  width: 100%;
+}
+
+
+/* ── 20. Sidebar ──────────────────────────── */
+[data-sidebar] {
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  background: var(--ml-bg);
+  padding: var(--ml-space-4);
+}
+
+[data-sidebar] nav {
+  display: grid;
+  gap: var(--ml-space-1);
+}
+
+[data-sidebar] a {
+  text-decoration: none;
+  color: var(--ml-text);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--ml-radius-sm);
+}
+
+[data-sidebar] a:hover {
+  background: var(--ml-bg-raised);
+}
+
+
+/* ── 21. Skeleton ─────────────────────────── */
+[data-skeleton] {
+  display: block;
+  width: 100%;
+  height: 1rem;
+  border-radius: var(--ml-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--ml-bg-sunken) 25%,
+    var(--ml-bg-raised) 37%,
+    var(--ml-bg-sunken) 63%
+  );
+  background-size: 400% 100%;
+  animation: ml-skeleton 1.2s ease-in-out infinite;
+}
+
+@keyframes ml-skeleton {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+
+/* ── 22. Spinner ──────────────────────────── */
+[data-spinner] {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--ml-border);
+  border-top-color: var(--ml-accent);
+  animation: ml-spin 0.9s linear infinite;
+}
+
+[data-spinner][data-size="lg"] {
+  width: 2rem;
+  height: 2rem;
+  border-width: 3px;
+}
+
+
+/* ── 23. Tabs ─────────────────────────────── */
+[role="tablist"] {
+  display: flex;
+  gap: var(--ml-space-2);
+  border-bottom: 1px solid var(--ml-border);
+  padding-bottom: var(--ml-space-2);
+}
+
+[role="tab"] {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ml-text-muted);
+}
+
+[role="tab"][aria-selected="true"] {
+  color: var(--ml-text);
+  background: var(--ml-bg-raised);
+  border-color: var(--ml-border);
+}
+
+[role="tabpanel"] {
+  margin-top: var(--ml-space-3);
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  padding: var(--ml-space-4);
+}
+
+
+/* ── 24. Tooltip ──────────────────────────── */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  background: var(--ml-text);
+  color: var(--ml-bg);
+  border-radius: var(--ml-radius-sm);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.72rem;
+  transition: opacity var(--ml-duration) var(--ml-ease), transform var(--ml-duration) var(--ml-ease);
+  z-index: 10;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ── 25. Utilities ────────────────────────── */
+[data-stack] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ml-space-3);
+}
+
+[data-cluster] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ml-space-2);
+}
+
+[data-center] {
+  display: grid;
+  place-items: center;
+}
+
+[data-surface="raised"] {
+  background: var(--ml-bg-raised);
+}
+
+[data-surface="sunken"] {
+  background: var(--ml-bg-sunken);
+}
 /* Docs site chrome — uses default Millet tokens (no custom brand palette) */
 
 :root {

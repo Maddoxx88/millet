@@ -31,17 +31,30 @@
 
       <div class="docs-nav-group">
         <h6>Components</h6>
-        <a href="#buttons">Buttons</a>
+        <a href="#typography">Typography</a>
         <a href="#accordion">Accordion</a>
+        <a href="#alert">Alert</a>
+        <a href="#animations">Animations</a>
+        <a href="#avatar">Avatar</a>
+        <a href="#badge">Badge</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#card">Card</a>
         <a href="#dialog">Dialog</a>
         <a href="#dropdown">Dropdown</a>
+        <a href="#full-form">Form</a>
+        <a href="#grid">Grid</a>
+        <a href="#progress">Progress</a>
+        <a href="#sidebar-component">Sidebar</a>
+        <a href="#skeleton">Skeleton</a>
+        <a href="#spinner">Spinner</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#data-table">Table</a>
         <a href="#toast-alert">Toast &amp; alert</a>
-        <a href="#data-table">Data table</a>
+        <a href="#tooltip">Tooltip</a>
+        <a href="#utilities">Utilities</a>
         <a href="#text-inputs">Text inputs</a>
         <a href="#other-inputs">Other inputs</a>
         <a href="#checks">Checkboxes &amp; radios</a>
-        <a href="#full-form">Full form</a>
-        <a href="#typography">Typography</a>
       </div>
     </nav>
   </aside>
@@ -356,6 +369,174 @@
       </tr>
     </tbody>
   </table>
+</section>
+
+
+<!-- ── Alert ──────────────────────────────── -->
+<section class="docs-section" id="alert" aria-labelledby="alert-title">
+  <h2 id="alert-title">Alert</h2>
+  <p>Standalone alert style via semantic <code>role="alert"</code>.</p>
+  <div role="alert">
+    Your session is about to expire. Save your work to prevent data loss.
+  </div>
+</section>
+
+
+<!-- ── Animations ─────────────────────────── -->
+<section class="docs-section" id="animations" aria-labelledby="animations-title">
+  <h2 id="animations-title">Animations</h2>
+  <p>Use <code>data-animate</code> for lightweight motion primitives.</p>
+  <div class="row">
+    <span data-badge data-tone="accent" data-animate="fade-in">Fade in</span>
+    <span data-badge data-tone="success" data-animate="pulse">Pulse</span>
+    <span data-spinner data-animate="spin" aria-label="Loading"></span>
+  </div>
+</section>
+
+
+<!-- ── Avatar ─────────────────────────────── -->
+<section class="docs-section" id="avatar" aria-labelledby="avatar-title">
+  <h2 id="avatar-title">Avatar</h2>
+  <div class="row">
+    <span data-avatar>AS</span>
+    <span data-avatar data-size="lg">ML</span>
+    <span data-avatar><img src="./logo.png" alt="Millet logo avatar"></span>
+  </div>
+</section>
+
+
+<!-- ── Badge ──────────────────────────────── -->
+<section class="docs-section" id="badge" aria-labelledby="badge-title">
+  <h2 id="badge-title">Badge</h2>
+  <div class="row">
+    <span data-badge>Default</span>
+    <span data-badge data-tone="accent">Beta</span>
+    <span data-badge data-tone="success">Active</span>
+    <span data-badge data-tone="danger">Deprecated</span>
+  </div>
+</section>
+
+
+<!-- ── Card ───────────────────────────────── -->
+<section class="docs-section" id="card" aria-labelledby="card-title">
+  <h2 id="card-title">Card</h2>
+  <article data-card>
+    <h3>Usage insights</h3>
+    <p>Build reusable content blocks with semantic <code>article</code>/<code>section</code> and <code>data-card</code>.</p>
+    <div class="row">
+      <span data-badge data-tone="accent">Weekly</span>
+      <button type="button" data-size="sm">View report</button>
+    </div>
+  </article>
+</section>
+
+
+<!-- ── Grid ───────────────────────────────── -->
+<section class="docs-section" id="grid" aria-labelledby="grid-title">
+  <h2 id="grid-title">Grid</h2>
+  <div data-grid data-columns="3">
+    <article data-card><h4>One</h4><p>Auto responsive grid item.</p></article>
+    <article data-card><h4>Two</h4><p>Auto responsive grid item.</p></article>
+    <article data-card><h4>Three</h4><p>Auto responsive grid item.</p></article>
+  </div>
+</section>
+
+
+<!-- ── Progress ───────────────────────────── -->
+<section class="docs-section" id="progress" aria-labelledby="progress-title">
+  <h2 id="progress-title">Progress</h2>
+  <div class="ml-field">
+    <label for="upload-progress">Upload progress</label>
+    <progress id="upload-progress" max="100" value="64">64%</progress>
+  </div>
+  <div class="ml-field">
+    <label for="quality-meter">Quality meter</label>
+    <meter id="quality-meter" min="0" max="100" value="82">82%</meter>
+  </div>
+</section>
+
+
+<!-- ── Sidebar ────────────────────────────── -->
+<section class="docs-section" id="sidebar-component" aria-labelledby="sidebar-component-title">
+  <h2 id="sidebar-component-title">Sidebar</h2>
+  <aside data-sidebar aria-label="Project sidebar">
+    <h4>Project</h4>
+    <nav aria-label="Sidebar links">
+      <a href="#usage">Overview</a>
+      <a href="#full-form">Forms</a>
+      <a href="#data-table">Data</a>
+    </nav>
+  </aside>
+</section>
+
+
+<!-- ── Skeleton ───────────────────────────── -->
+<section class="docs-section" id="skeleton" aria-labelledby="skeleton-title">
+  <h2 id="skeleton-title">Skeleton</h2>
+  <div data-stack>
+    <span data-skeleton style="height:1.1rem; width:35%;"></span>
+    <span data-skeleton style="height:0.9rem;"></span>
+    <span data-skeleton style="height:0.9rem; width:82%;"></span>
+  </div>
+</section>
+
+
+<!-- ── Spinner ────────────────────────────── -->
+<section class="docs-section" id="spinner" aria-labelledby="spinner-title">
+  <h2 id="spinner-title">Spinner</h2>
+  <div class="row">
+    <span data-spinner aria-label="Loading"></span>
+    <span data-spinner data-size="lg" aria-label="Loading large"></span>
+  </div>
+</section>
+
+
+<!-- ── Tabs ───────────────────────────────── -->
+<section class="docs-section" id="tabs" aria-labelledby="tabs-title">
+  <h2 id="tabs-title">Tabs</h2>
+  <div data-tabs>
+    <div role="tablist" aria-label="Account views">
+      <button type="button" role="tab" aria-selected="true">Profile</button>
+      <button type="button" role="tab">Security</button>
+      <button type="button" role="tab">Billing</button>
+    </div>
+    <section role="tabpanel">
+      <p>Profile settings and display information.</p>
+    </section>
+    <section role="tabpanel" hidden>
+      <p>Change password and 2FA controls.</p>
+    </section>
+    <section role="tabpanel" hidden>
+      <p>Invoices, payment methods, and plan details.</p>
+    </section>
+  </div>
+</section>
+
+
+<!-- ── Tooltip ────────────────────────────── -->
+<section class="docs-section" id="tooltip" aria-labelledby="tooltip-title">
+  <h2 id="tooltip-title">Tooltip</h2>
+  <p>Hover or focus to reveal tooltip text.</p>
+  <div class="row">
+    <button type="button" data-tooltip="Copy to clipboard">Copy</button>
+    <span tabindex="0" data-badge data-tooltip="Environment: production">PROD</span>
+  </div>
+</section>
+
+
+<!-- ── Utilities ──────────────────────────── -->
+<section class="docs-section" id="utilities" aria-labelledby="utilities-title">
+  <h2 id="utilities-title">Utilities</h2>
+  <div data-stack data-surface="raised" style="padding:12px; border:1px solid var(--ml-border); border-radius:8px;">
+    <div data-cluster>
+      <span data-badge>Cluster</span>
+      <span data-badge data-tone="accent">Wrap</span>
+      <span data-badge data-tone="success">Align</span>
+    </div>
+    <div data-center style="min-height:72px; border:1px dashed var(--ml-border); border-radius:8px;">
+      <span data-badge>Centered</span>
+    </div>
+  </div>
 </section>
 
 
