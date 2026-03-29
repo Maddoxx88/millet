@@ -62,9 +62,10 @@
 /* Dark mode — auto, no JS needed */
 @media (prefers-color-scheme: dark) {
   :root {
-    --ml-accent:       hsl(var(--ml-hue) 75% 62%);
-    --ml-accent-hover: hsl(var(--ml-hue) 75% 70%);
-    --ml-accent-muted: hsl(var(--ml-hue) 40% 16%);
+    --ml-accent:       hsl(0 0% 96%);
+    --ml-accent-hover: hsl(0 0% 100%);
+    --ml-accent-muted: hsl(0 0% 18%);
+    --ml-text-on-accent: hsl(0 0% 8%);
 
     --ml-bg:           hsl(0 0% 9%);
     --ml-bg-raised:    hsl(0 0% 13%);
