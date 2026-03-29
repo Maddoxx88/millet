@@ -1156,13 +1156,7 @@ body {
 }
 
 .docs-main {
-  background: linear-gradient(
-    180deg,
-    var(--ml-bg) 0,
-    var(--ml-bg) 240px,
-    var(--ml-bg-raised) 240px,
-    var(--ml-bg-raised) 100%
-  );
+  background: var(--ml-bg);
 }
 
 .docs-topbar {
