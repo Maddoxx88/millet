@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millet — Components</title>
+  <link rel="icon" type="image/png" href="./favicon-mobile.png">
+  <link rel="apple-touch-icon" href="./favicon-mobile.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <div class="docs-brand">
+      <a class="docs-logo" href="./index.html" aria-label="Millet docs home">
+        <img src="./logo.png" alt="Millet" class="docs-logo-img" width="140" height="36">
+      </a>
+      <button class="docs-theme-toggle" type="button" data-variant="ghost" data-size="sm" data-docs-theme-toggle>
+        Light
+      </button>
+    </div>
+
+    <nav class="docs-nav" aria-label="Docs navigation">
+      <div class="docs-nav-group">
+        <h6>Components</h6>
+        <a href="#typography">Typography</a>
+        <a href="#accordion">Accordion</a>
+        <a href="#alert">Alert</a>
+        <a href="#animations">Animations</a>
+        <a href="#avatar">Avatar</a>
+        <a href="#badge">Badge</a>
+        <a href="#buttons">Button</a>
+        <a href="#card">Card</a>
+        <a href="#dialog">Dialog</a>
+        <a href="#dropdown">Dropdown</a>
+        <a href="#form">Form</a>
+        <a href="#grid">Grid</a>
+        <a href="#progress">Progress</a>
+        <a href="#sidebar-component">Sidebar</a>
+        <a href="#skeleton">Skeleton</a>
+        <a href="#spinner">Spinner</a>
+        <a href="#data-table">Table</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#toast">Toast</a>
+        <a href="#tooltip">Tooltip</a>
+        <a href="#utilities">Utilities</a>
+      </div>
+
+      <div class="docs-nav-group">
+        <h6>Explore</h6>
+        <a href="./index.html">Home</a>
+        <a href="./usage.html">Usage</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="docs-main">
+    <header class="docs-topbar" role="banner">
+      <div class="docs-topbar-inner">
+        <div class="docs-topbar-links" aria-label="Top navigation">
+          <a href="./index.html">Home</a>
+          <a href="./usage.html">Usage</a>
+          <a href="./components.html">Components</a>
+          <a href="https://github.com/Maddoxx88/millet" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="docs-content" id="top">
+      <section class="docs-hero" aria-labelledby="components-title">
+        <h1 id="components-title">Components</h1>
+        <p class="docs-lede">Reference demos for each Millet component and utility.</p>
+      </section>
+
+      <section class="docs-section" id="typography" aria-labelledby="typography-title">
+        <h2 id="typography-title">Typography</h2>
+        <h1>h1 — Page title</h1>
+        <h3>h3 — Subheading</h3>
+        <p>Body text with <strong>strong</strong>, <a href="#">link</a>, <code>inline code</code>, and <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+        <blockquote>Perfection is achieved when there is nothing left to take away.</blockquote>
+      </section>
+
+      <section class="docs-section" id="buttons" aria-labelledby="buttons-title">
+        <h2 id="buttons-title">Button</h2>
+        <div class="ml-btn-row">
+          <button type="button">Secondary</button>
+          <button type="submit">Primary</button>
+          <button type="reset">Danger</button>
+          <button type="button" data-variant="ghost">Ghost</button>
+        </div>
+      </section>
+
+      <section class="docs-section" id="accordion" aria-labelledby="accordion-title">
+        <h2 id="accordion-title">Accordion</h2>
+        <div data-accordion="single">
+          <details open>
+            <summary>What is Millet?</summary>
+            <p>Semantic-first CSS with optional progressive enhancement.</p>
+          </details>
+          <details>
+            <summary>Does it need JS?</summary>
+            <p>Only for interactive enhancements like tabs/dialog/dropdown behavior.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="docs-section" id="alert" aria-labelledby="alert-title">
+        <h2 id="alert-title">Alert</h2>
+        <div role="alert">Your session expires soon. Save your changes.</div>
+      </section>
+
+      <section class="docs-section" id="animations" aria-labelledby="animations-title">
+        <h2 id="animations-title">Animations</h2>
+        <div class="row">
+          <span data-badge data-animate="fade-in">fade-in</span>
+          <span data-badge data-animate="pulse">pulse</span>
+          <span data-spinner data-animate="spin" aria-label="Loading"></span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="avatar" aria-labelledby="avatar-title">
+        <h2 id="avatar-title">Avatar</h2>
+        <div class="row">
+          <span data-avatar>AS</span>
+          <span data-avatar data-size="lg">ML</span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Badge</h2>
+        <div class="row">
+          <span data-badge>Default</span>
+          <span data-badge data-tone="accent">Beta</span>
+          <span data-badge data-tone="success">Active</span>
+          <span data-badge data-tone="danger">Deprecated</span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="card" aria-labelledby="card-title">
+        <h2 id="card-title">Card</h2>
+        <article data-card>
+          <h3>Usage insights</h3>
+          <p>Build reusable sections with semantic markup and minimal attributes.</p>
+        </article>
+      </section>
+
+      <section class="docs-section" id="dialog" aria-labelledby="dialog-title">
+        <h2 id="dialog-title">Dialog</h2>
+        <button type="button" data-dialog-open="demo-dialog">Open dialog</button>
+        <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
+          <header><h3 id="demo-dialog-title">Delete draft?</h3></header>
+          <section><p>This action cannot be undone.</p></section>
+          <footer>
+            <button type="button" data-variant="ghost" data-dialog-close>Cancel</button>
+            <button type="reset" data-dialog-close>Delete</button>
+          </footer>
+        </dialog>
+      </section>
+
+      <section class="docs-section" id="dropdown" aria-labelledby="dropdown-title">
+        <h2 id="dropdown-title">Dropdown</h2>
+        <button type="button" popovertarget="menu-1" aria-haspopup="menu">Actions</button>
+        <div id="menu-1" popover>
+          <button type="button" data-variant="ghost">Edit</button>
+          <button type="button" data-variant="ghost">Duplicate</button>
+          <button type="reset">Archive</button>
+        </div>
+      </section>
+
+      <section class="docs-section" id="form" aria-labelledby="form-title">
+        <h2 id="form-title">Form</h2>
+        <form novalidate>
+          <div class="ml-field">
+            <label for="f-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="f-name" required placeholder="Your name">
+            <small data-help=""></small>
+          </div>
+          <div class="ml-field">
+            <label for="f-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="f-email" required placeholder="you@example.com">
+            <small data-help=""></small>
+          </div>
+          <div class="ml-field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" rows="3" placeholder="What's on your mind?"></textarea>
+          </div>
+          <div class="ml-check" style="margin-bottom:1rem">
+            <input type="checkbox" id="f-terms" required>
+            <label for="f-terms">I agree to the terms</label>
+          </div>
+          <div class="ml-btn-row">
+            <button type="submit">Send</button>
+            <button type="reset">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="docs-section" id="grid" aria-labelledby="grid-title">
+        <h2 id="grid-title">Grid</h2>
+        <div data-grid data-columns="3">
+          <article data-card><h4>One</h4><p>Auto responsive item.</p></article>
+          <article data-card><h4>Two</h4><p>Auto responsive item.</p></article>
+          <article data-card><h4>Three</h4><p>Auto responsive item.</p></article>
+        </div>
+      </section>
+
+      <section class="docs-section" id="progress" aria-labelledby="progress-title">
+        <h2 id="progress-title">Progress</h2>
+        <div class="ml-field">
+          <label for="upload-progress">Upload progress</label>
+          <progress id="upload-progress" max="100" value="64">64%</progress>
+        </div>
+      </section>
+
+      <section class="docs-section" id="sidebar-component" aria-labelledby="sidebar-title">
+        <h2 id="sidebar-title">Sidebar</h2>
+        <aside data-sidebar aria-label="Project sidebar">
+          <h4>Project</h4>
+          <nav aria-label="Sidebar links">
+            <a href="#typography">Overview</a>
+            <a href="#form">Forms</a>
+            <a href="#data-table">Data</a>
+          </nav>
+        </aside>
+      </section>
+
+      <section class="docs-section" id="skeleton" aria-labelledby="skeleton-title">
+        <h2 id="skeleton-title">Skeleton</h2>
+        <div data-stack>
+          <span data-skeleton style="height:1rem; width:35%;"></span>
+          <span data-skeleton style="height:0.9rem;"></span>
+          <span data-skeleton style="height:0.9rem; width:82%;"></span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="spinner" aria-labelledby="spinner-title">
+        <h2 id="spinner-title">Spinner</h2>
+        <div class="row">
+          <span data-spinner aria-label="Loading"></span>
+          <span data-spinner data-size="lg" aria-label="Loading large"></span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="data-table" aria-labelledby="table-title">
+        <h2 id="table-title">Table</h2>
+        <table>
+          <caption>Team usage this week</caption>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Requests</th>
+              <th scope="col">Success rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ada Lovelace</td><td>1,820</td><td>99.6%</td></tr>
+            <tr><td>Alan Turing</td><td>2,104</td><td>98.9%</td></tr>
+            <tr><td>Grace Hopper</td><td>1,432</td><td>99.8%</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="docs-section" id="tabs" aria-labelledby="tabs-title">
+        <h2 id="tabs-title">Tabs</h2>
+        <div data-tabs>
+          <div role="tablist" aria-label="Account views">
+            <button type="button" role="tab" aria-selected="true">Profile</button>
+            <button type="button" role="tab">Security</button>
+            <button type="button" role="tab">Billing</button>
+          </div>
+          <section role="tabpanel"><p>Profile settings and display information.</p></section>
+          <section role="tabpanel" hidden><p>Change password and 2FA controls.</p></section>
+          <section role="tabpanel" hidden><p>Invoices and plan details.</p></section>
+        </div>
+      </section>
+
+      <section class="docs-section" id="toast" aria-labelledby="toast-title">
+        <h2 id="toast-title">Toast</h2>
+        <div style="display:grid; gap:12px;">
+          <div data-toast role="status" data-tone="success" data-auto-dismiss="7000">
+            <p>Profile updated successfully.</p>
+            <button type="button" data-variant="ghost" data-size="sm" data-toast-close>Dismiss</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="docs-section" id="tooltip" aria-labelledby="tooltip-title">
+        <h2 id="tooltip-title">Tooltip</h2>
+        <div class="row">
+          <button type="button" data-tooltip="Copy to clipboard">Copy</button>
+          <span tabindex="0" data-badge data-tooltip="Environment: production">PROD</span>
+        </div>
+      </section>
+
+      <section class="docs-section" id="utilities" aria-labelledby="utilities-title">
+        <h2 id="utilities-title">Utilities</h2>
+        <div data-stack data-surface="raised" style="padding:12px; border:1px solid var(--ml-border); border-radius:8px;">
+          <div data-cluster>
+            <span data-badge>Cluster</span>
+            <span data-badge data-tone="accent">Wrap</span>
+            <span data-badge data-tone="success">Align</span>
+          </div>
+          <div data-center style="min-height:72px; border:1px dashed var(--ml-border); border-radius:8px;">
+            <span data-badge>Centered</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="./docs.js"></script>
+<script type="module" src="./enhance.js"></script>
+</body>
+</html>

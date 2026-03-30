@@ -43,11 +43,14 @@ function initSectionSpy() {
   if (!nav) return;
 
   const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
-  const targets = links
-    .map(a => document.querySelector(a.getAttribute('href')))
+  const sections = links
+    .map(link => {
+      const target = document.querySelector(link.getAttribute('href'));
+      return target ? { link, target } : null;
+    })
     .filter(Boolean);
 
-  if (!targets.length) return;
+  if (!sections.length) return;
 
   const setCurrent = (id) => {
     links.forEach(a => {
@@ -58,14 +61,46 @@ function initSectionSpy() {
     });
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible?.target?.id) setCurrent(visible.target.id);
-  }, { rootMargin: '-30% 0px -65% 0px', threshold: [0.1, 0.2, 0.4, 0.6] });
+  const updateByScroll = () => {
+    const marker = window.scrollY + window.innerHeight * 0.28;
+    let active = sections[0];
 
-  targets.forEach(t => observer.observe(t));
+    for (const section of sections) {
+      if (section.target.offsetTop <= marker) {
+        active = section;
+      } else {
+        break;
+      }
+    }
+
+    setCurrent(active.target.id);
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateByScroll();
+      ticking = false;
+    });
+  };
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').slice(1);
+      setCurrent(id);
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('hashchange', () => {
+    const id = window.location.hash.slice(1);
+    if (id) setCurrent(id);
+  });
+
+  updateByScroll();
 }
 
 if (document.readyState === 'loading') {

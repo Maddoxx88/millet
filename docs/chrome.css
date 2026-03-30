@@ -78,6 +78,23 @@ body {
   opacity: 0.9;
 }
 
+.docs-hero-logo:hover img {
+  opacity: 0.88;
+}
+
+/* Keep logo visible when using dark backgrounds */
+:root[data-theme="dark"] .docs-logo-img,
+:root[data-theme="dark"] .docs-hero-logo img {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .docs-logo-img,
+  html:not([data-theme="light"]) .docs-hero-logo img {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .docs-theme-toggle {
   font-size: var(--ml-text-sm);
 }
@@ -185,10 +202,6 @@ body {
   object-fit: contain;
 }
 
-.docs-hero-logo:hover img {
-  opacity: 0.88;
-}
-
 .docs-hero h1 {
   letter-spacing: -0.03em;
   color: var(--ml-text);
@@ -229,6 +242,49 @@ body {
   color: var(--ml-text-muted);
   font-size: var(--ml-text-sm);
   max-width: none;
+}
+
+/* Landing page polish */
+.landing-page {
+  --landing-accent: hsl(165 78% 30%);
+  --landing-accent-hover: hsl(165 78% 24%);
+}
+
+:root[data-theme="dark"] .landing-page {
+  --landing-accent: hsl(0 0% 100%);
+  --landing-accent-hover: hsl(0 0% 92%);
+}
+
+.landing-page .docs-cta button {
+  border-radius: 9px;
+}
+
+.landing-page .docs-cta a:first-child button {
+  background: var(--landing-accent);
+  border-color: var(--landing-accent);
+  color: #fff;
+}
+
+.landing-page .docs-cta a:first-child button:hover:not(:disabled) {
+  background: var(--landing-accent-hover);
+  border-color: var(--landing-accent-hover);
+}
+
+.landing-page .docs-content a:not(.docs-hero-logo) {
+  color: var(--landing-accent);
+}
+
+.landing-page .docs-content a:not(.docs-hero-logo):hover {
+  color: var(--landing-accent-hover);
+}
+
+:root[data-theme="dark"] .landing-page .docs-cta a:first-child button {
+  color: hsl(0 0% 8%);
+}
+
+:root[data-theme="dark"] .landing-page .docs-content a:not(.docs-hero-logo),
+:root[data-theme="dark"] .landing-page .docs-content a:not(.docs-hero-logo):hover {
+  color: var(--ml-text);
 }
 
 .docs-divider {

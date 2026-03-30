@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millet — Usage guide</title>
+  <link rel="icon" type="image/png" href="./favicon-mobile.png">
+  <link rel="apple-touch-icon" href="./favicon-mobile.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <div class="docs-brand">
+      <a class="docs-logo" href="./index.html" aria-label="Millet docs home">
+        <img src="./logo.png" alt="Millet" class="docs-logo-img" width="140" height="36">
+      </a>
+      <button class="docs-theme-toggle" type="button" data-variant="ghost" data-size="sm" data-docs-theme-toggle>
+        Light
+      </button>
+    </div>
+
+    <nav class="docs-nav" aria-label="Docs navigation">
+      <div class="docs-nav-group">
+        <h6>Usage guide</h6>
+        <a href="#top">Overview</a>
+        <a href="#install">Install</a>
+        <a href="#patterns">Core patterns</a>
+        <a href="#theming">Theming</a>
+      </div>
+      <div class="docs-nav-group">
+        <h6>Explore</h6>
+        <a href="./index.html">Home</a>
+        <a href="./components.html">Components</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="docs-main">
+    <header class="docs-topbar" role="banner">
+      <div class="docs-topbar-inner">
+        <div class="docs-topbar-links" aria-label="Top navigation">
+          <a href="./index.html">Home</a>
+          <a href="./usage.html">Usage</a>
+          <a href="./components.html">Components</a>
+          <a href="https://github.com/Maddoxx88/millet" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="docs-content" id="top">
+      <section class="docs-hero" aria-labelledby="usage-title">
+        <h1 id="usage-title">Usage guide</h1>
+        <p class="docs-lede">
+          Include Millet CSS, optionally add enhancement JS, then write semantic HTML.
+        </p>
+      </section>
+
+      <section class="docs-section" id="install" aria-labelledby="install-title">
+        <h2 id="install-title">Install</h2>
+        <pre><code>&lt;link rel="stylesheet" href="millet.css"&gt;
+&lt;script type="module" src="millet/core.js"&gt;&lt;/script&gt;</code></pre>
+        <p>
+          For docs/local demo pages, this project uses <code>styles.css</code> and <code>enhance.js</code> under <code>docs</code>.
+        </p>
+      </section>
+
+      <section class="docs-section" id="patterns" aria-labelledby="patterns-title">
+        <h2 id="patterns-title">Core patterns</h2>
+        <ul style="padding-left:1.2rem;">
+          <li><code>&lt;button type="submit"&gt;</code> yields primary action styling.</li>
+          <li><code>data-variant</code>, <code>data-size</code>, and <code>data-width</code> provide variants.</li>
+          <li>Forms, dialogs, popovers, tabs, and toasts gain behavior through enhancement JS.</li>
+          <li>Use semantic roles and native elements first, then add optional attributes for polish.</li>
+        </ul>
+      </section>
+
+      <section class="docs-section" id="theming" aria-labelledby="theming-title">
+        <h2 id="theming-title">Theming</h2>
+        <p>Override tokens on <code>:root</code> to customize look and feel.</p>
+        <pre><code>:root {
+  --ml-hue: 210;
+  --ml-radius: 7px;
+  --ml-font: system-ui, sans-serif;
+}</code></pre>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="./docs.js"></script>
+</body>
+</html>
