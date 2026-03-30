@@ -14,8 +14,11 @@ function applyTheme(mode) {
 function setButtonLabel(btn, mode) {
   const current = mode[0].toUpperCase() + mode.slice(1);
   const next = mode === 'light' ? 'Dark' : 'Light';
+  const icon = mode === 'light' ? '☀' : '☾';
   btn.setAttribute('aria-label', `Current theme: ${current}. Switch to ${next}.`);
-  btn.textContent = current;
+  btn.setAttribute('title', `Switch to ${next} mode`);
+  btn.dataset.mode = mode;
+  btn.innerHTML = `<span aria-hidden="true" class="docs-theme-icon">${icon}</span><span>${current}</span>`;
 }
 
 function cycleTheme(mode) {
