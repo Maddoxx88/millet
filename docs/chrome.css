@@ -399,6 +399,7 @@ body {
 .docs-section {
   margin-top: 10px;
   padding-top: 16px;
+  scroll-margin-top: calc(var(--docs-topbar-h) + 18px);
 }
 
 .docs-section > h2 {
